@@ -1,0 +1,11 @@
+assets
+example
+src
+node_modules
+.babelrc
+.gitignore
+.npmignore
+package-lock.json
+webpack.build.config.js
+webpack.dev.config.js
+.jsbeautifyrc
