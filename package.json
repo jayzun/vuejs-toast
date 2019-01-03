@@ -1,8 +1,8 @@
 {
-    "name": "vuejs-toast",
+    "name": "vuejs-toasts",
     "version": "1.0.0",
     "description": "A toast component for mobile webapp, by vue.js",
-    "main": "dist/vuejs-toast.min.js",
+    "main": "dist/vuejs-toasts.min.js",
     "scripts": {
         "dev": "webpack-dev-server --inline --config ./webpack.dev.config.js",
         "start": "npm run dev",

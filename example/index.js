@@ -1,5 +1,5 @@
 import Vue from 'vue';
-// import Toast from '../dist/vuejs-toast.min';
+// import Toast from '../dist/vuejs-toasts.min';
 import Toast from '../src/index';
 import App from './App.vue';
 

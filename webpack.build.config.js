@@ -7,8 +7,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/dist/',
-        filename: 'vuejs-toast.min.js',
-        library: 'vuejs-toast',
+        filename: 'vuejs-toasts.min.js',
+        library: 'vuejs-toasts',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },

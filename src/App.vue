@@ -11,7 +11,7 @@
 
 <script>
     export default {
-        name: 'vuejs-toast',
+        name: 'vuejs-toasts',
         data() {
 
             return {

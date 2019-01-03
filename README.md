@@ -3,14 +3,14 @@
 ## Installation
 
 ```bash
-npm i vuejs-toast --save
+npm i vuejs-toasts --save
 ```
 
 ## Usage
 
 ```javascript
 //main.js
-import Toast from 'vuejs-toast';
+import Toast from 'vuejs-toasts';
 
 Vue.use(Toast);
 
@@ -30,7 +30,7 @@ this.$toast.show({
 });
 ```
 
-![vuejs-toast](https://s2.ax1x.com/2019/01/03/FoM2qK.png)
+![vuejs-toasts](https://s2.ax1x.com/2019/01/03/FoM2qK.png)
 
 ## Option
 
