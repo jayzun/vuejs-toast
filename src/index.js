@@ -1,20 +1,31 @@
 import vuejsToast from './App.vue'
 
-vuejsToast.install = (Vue, globalOption) => {
+vuejsToast.install = (Vue, defaultOption) => {
 
     //用于将option合并到组件中的data
-    let merge = (data, option) => {
-        let source = option || {};
-        for (let prop in source) {
-            if (source.hasOwnProperty(prop)) {
-                let value = source[prop];
-                if (value !== undefined) {
+    let merge = (data, ...option) => {
+        for (let i = 0; i < option.length; i++) {
+            let source = option[i] || {};
+            for (let prop in source) {
+                if (source.hasOwnProperty(prop)) {
+                    let value = source[prop];
+                    // if (value !== undefined) {
                     data[prop] = value;
+                    // }
                 }
             }
         }
         return data;
     }
+
+    //配置默认option
+    let defaults = merge({
+        type: 'normal',
+        text: undefined,
+        duration: 2000,
+        callback: undefined,
+        mask: true
+    }, defaultOption);
 
     let instance;
     //extend 是构造一个组件的语法器
@@ -26,28 +37,25 @@ vuejsToast.install = (Vue, globalOption) => {
             el: document.createElement('div')
         });
         //合并全局option
-        merge(instance.$data, globalOption);
+        merge(instance.$data, defaults);
         //添加到body
         document.body.appendChild(instance.$el);
     }
 
     let Toast = {
         show(option) {
-            if(window.$isToast === undefined) {
+            if (!instance) {
                 //组件仅初始化一次
                 initInstance();
-            }
-            else if(window.$isToast) {
+            } else if (instance.state) {
                 return;
             }
             //合并option
-            merge(instance.$data, option);
+            merge(instance.$data, defaults, option);
             //显示toast组件
             instance.state = true;
-            window.$isToast = true;
         },
         close() {
-            window.$isToast = false;
             //隐藏toast组件
             instance.state = false;
         }

@@ -15,6 +15,10 @@
                 text: 'hello world!',
                 type: 'info'
             });
+
+            setTimeout(() => {
+                this.$toast.show({text: 'hello world!'});
+            }, 3000)
         }
     }
 </script>

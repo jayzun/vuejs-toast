@@ -11,7 +11,6 @@ npm i vuejs-toasts --save
 ```javascript
 //main.js
 import Toast from 'vuejs-toasts';
-
 Vue.use(Toast);
 
 //.vue files
@@ -38,11 +37,13 @@ use option to custom the component.
 option is an object.
 Use option in the following ways:
 
+- Set option once.
+
 ```javascript
 this.$toast.show(option);
 ```
 
-or
+- Set option globally, the next time you show the component, option would still be effective.
 
 ```javascript
 Vue.use(Toast, option);

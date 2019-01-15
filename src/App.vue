@@ -33,7 +33,6 @@
                     if (!isNaN(duration)) {
                         setTimeout(() => {
                             this.state = false;
-                            window.$isToast = false;
                         }, duration);
                     }
                 } else if (preVal) {
