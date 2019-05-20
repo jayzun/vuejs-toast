@@ -13,12 +13,9 @@
         mounted() {
             this.$toast.show({
                 text: 'hello world!',
-                type: 'info'
+                type: 'info',
+                duration: 1000
             });
-
-            setTimeout(() => {
-                this.$toast.show({text: 'hello world!'});
-            }, 3000)
         }
     }
 </script>

@@ -44,10 +44,9 @@ vuejsToast.install = (Vue, defaultOption) => {
 
     let Toast = {
         show(option) {
-            if (!instance) {
-                //组件仅初始化一次
+            if (!instance) { //组件仅初始化一次
                 initInstance();
-            } else if (instance.state) {
+            } else if (instance.state) { //维持单例
                 return;
             }
             //合并option
